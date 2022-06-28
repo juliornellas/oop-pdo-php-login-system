@@ -8,12 +8,12 @@ if(isset($_POST["submit"]))
     $pwdRepeat = $_POST["pwdrepeat"];
     $email = $_POST["email"];
 
-    //Instanciar Classes
+    //Instanciar Classes **Atenção a ORDEM
     include "../classes/dbh.classes.php";
     include "../classes/signup.classes.php";
-    include "../classes/signup-controler.classes.php";
+    include "../classes/signup-controller.classes.php";
 
-    $signup = new SignupControler($uid, $pwd, $pwdRepeat, $email);
+    $signup = new SignupController($uid, $pwd, $pwdRepeat, $email);
 
     //Verificando Erros e signup do usuario
     $signup->signupUser();

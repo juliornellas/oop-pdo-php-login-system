@@ -1,6 +1,6 @@
 <?php
 
-class SignupControler extends Signup{
+class SignupController extends Signup{
     private $uid;
     private $pwd;
     private $pwdRepeat;

@@ -6,7 +6,8 @@ class Dbh {
         try {
             $username = "root";
             $password = "";
-            $dbh = new PDO('msqli:host=localhost:3308;dbname=ooplogin', $username, $password);
+            $dbh = new PDO('msql:host=localhost;port=3308;dbname=ooplogin', $username, $password);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
             return $dbh;
         } catch (PDOException $e) {
             echo "<pre>";
