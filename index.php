@@ -1,5 +1,7 @@
 <?php
 // phpinfo();
+//Precisa iniciar a session em todas as paginas que vc quiser de alguma forma acessá-la
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,6 +45,7 @@
                 </form>
             </div>
             <div>
+                <?php if(!isset($_SESSION["userid"])){ ?>
                 <form class="form-control" action="includes/login.inc.php" method="post">
                     <h1 class="h3 mb-3 fw-normal">Log in</h1>
     
@@ -58,6 +61,11 @@
     
                     <button class="w-100 btn btn-sm btn-primary" type="submit" name="submit">Log in</button>
                 </form>
+                <?php }else{?>
+                    <h4>Olá, <?php echo $_SESSION["userid"]; ?>!</h4>
+                    <a href="includes/logout.inc.php"> Sair </a>
+                <?php } ?>
+
             </div>
         </main>
         <footer>

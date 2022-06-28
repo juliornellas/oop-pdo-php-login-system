@@ -10,7 +10,7 @@ class LoginController extends Login {
         $this->pwd = $pwd;
     }
 
-    public function signupUser(){
+    public function loginUser(){
         if($this->emptyInput() == false){
             header("location: ../index.php?error=emptyinput");
             exit();
