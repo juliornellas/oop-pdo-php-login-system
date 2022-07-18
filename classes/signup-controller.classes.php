@@ -40,18 +40,17 @@ class SignupController extends Signup{
     }
 
     private function emptyInput(){
-        $result = null;
+        // $result = null;
         if (empty($this->uid) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)){
             $result = false;
         }else{
             $result = true;
         }
-
         return $result;
     }
 
     private function invalidUid(){
-        $result = null;
+        // $result = null;
         if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) {
             $result = false;
         }else{
@@ -61,7 +60,7 @@ class SignupController extends Signup{
     }
 
     private function invalidEmail(){
-        $result = null;
+        // $result = null;
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
             $result = false;
         }else{
@@ -71,23 +70,11 @@ class SignupController extends Signup{
     }
 
     private function pwdMatch(){
-        $result = null;
-        if($this->pwd !== $this->pwdRepeat){
-            $result = false;
-        }else{
-            $result = true;
-        }
-        return $result;
+        return $this->pwd === $this->pwdRepeat;
     }
 
     private function uidCheck(){
-        $result = null;
-        if(!$this->checkUser($this->uid, $this->email)){
-            $result = false;
-        }else{
-            $result = true;
-        }
-        return $result;
+        return $this->checkUser($this->uid, $this->email);
     }
 
 }

@@ -36,9 +36,9 @@ class Signup extends Dbh{
         $resultCheck = null;
         //rowCount retorna qtd de registros/linhas de uma consulta. No caso deve ser ao menos 1
         if($statement->rowCount() > 0){
-            $resultCheck = false;
-        }else{
             $resultCheck = true;
+        }else{
+            $resultCheck = false;
         }
 
         return $resultCheck;
