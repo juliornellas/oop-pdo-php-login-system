@@ -47,7 +47,7 @@ session_start();
             <div>
                 <?php if(!isset($_SESSION["userid"])){ ?>
                 <form class="form-control" action="includes/login.inc.php" method="post">
-                    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+                    <h1 class="h3 mb-3 fw-normal">Log in!</h1>
     
                     <div class="form-floating">
                         <input type="email" class="form-control" id="uid" name="uid" placeholder="name@example.com">
